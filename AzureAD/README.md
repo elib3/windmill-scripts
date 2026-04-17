@@ -11,6 +11,9 @@ Graph API, using the OAuth 2.0 client credentials flow.
 | `get_user.py` | `f/AzureAD/get_user` | Fetch a single user by ID or UPN |
 | `get_users.py` | `f/AzureAD/get_users` | List users with filter, search & pagination |
 | `get_group_members.py` | `f/AzureAD/get_group_members` | Get members of a group by ID or name |
+| `add_group_member.py` | `f/AzureAD/add_group_member` | Add a single user to a group by ID, UPN, or email |
+| `add_group_members.py` | `f/AzureAD/add_group_members` | Bulk-add users to a group with per-user result reporting |
+| `create_group.py` | `f/AzureAD/create_group` | Create a new Entra ID security/M365 group with optional owner |
 
 ## Resource Type
 
@@ -34,6 +37,8 @@ creating credentials.
 5. Go to **API permissions → Add → Microsoft Graph → Application permissions**, add:
    - `User.Read.All`
    - `GroupMember.Read.All`
+   - `Group.ReadWrite.All` *(required for create_group, add_group_member, add_group_members)*
+   - `GroupMember.ReadWrite.All` *(required for add_group_member, add_group_members)*
 6. Click **Grant admin consent**
 
 ### 2. Create the Resource in Windmill
@@ -51,6 +56,9 @@ auth.py               → f/AzureAD/auth
 get_user.py           → f/AzureAD/get_user
 get_users.py          → f/AzureAD/get_users
 get_group_members.py  → f/AzureAD/get_group_members
+add_group_member.py   → f/AzureAD/add_group_member
+add_group_members.py  → f/AzureAD/add_group_members
+create_group.py       → f/AzureAD/create_group
 ```
 
 > Scripts import from `f.AzureAD.auth` — deploy paths must match exactly.
