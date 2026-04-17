@@ -1,0 +1,28 @@
+{
+  "name": "ms_entra_id",
+  "description": "Microsoft Entra ID (Azure AD) credentials for Graph API via client credentials flow. Requires User.Read.All and GroupMember.Read.All application permissions on the app registration.",
+  "schema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "required": [
+      "tenant_id",
+      "client_id",
+      "client_secret"
+    ],
+    "properties": {
+      "tenant_id": {
+        "type": "string",
+        "description": "Azure AD tenant ID (GUID or domain, e.g. contoso.onmicrosoft.com)"
+      },
+      "client_id": {
+        "type": "string",
+        "description": "App registration client ID (application ID)"
+      },
+      "client_secret": {
+        "type": "string",
+        "password": true,
+        "description": "App registration client secret value"
+      }
+    }
+  }
+}
