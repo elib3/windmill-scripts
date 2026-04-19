@@ -9,6 +9,7 @@ package you can deploy independently into any Windmill workspace.
 | Package | Description |
 |---|---|
 | [`AzureAD/`](./AzureAD/) | Microsoft Entra ID (Azure AD) via Microsoft Graph API |
+| [`ServiceNow/`](./ServiceNow/) | ServiceNow Table API via OAuth2 ROPC flow |
 
 > More packages coming soon.
 
