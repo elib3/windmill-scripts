@@ -1,8 +1,5 @@
 
 import requests
-from typing import TypedDict
-
-import wmill
 from f.ServiceNow.auth import servicenow, get_token
 
 
