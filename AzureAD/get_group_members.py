@@ -25,7 +25,9 @@ def _resolve_group_id(group_id_or_name: str, token: str) -> str:
         raise ValueError(f"Group '{group_id_or_name}' not found.")
     if len(groups) > 1:
         matches = [f"{g['displayName']} ({g['id']})" for g in groups]
-        raise ValueError(f"Multiple groups match '{group_id_or_name}': {matches}. Use the object ID instead.")
+        raise ValueError(
+            f"Multiple groups match '{group_id_or_name}': {matches}. Use the object ID instead."
+        )
     return groups[0]["id"]
 
 

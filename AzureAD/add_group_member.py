@@ -98,6 +98,7 @@ def main(
         message = resp.json().get("error", {}).get("message", "")
         if "already exist" in message.lower():
             print(f"'{user}' is already a member of '{group}' — skipping")
-            return {"added": False, "already_member": True, "group_id": group_id, "user_id": user_id}
+            return {"added": False, "already_member": True, "group_id": group_id,
+                    "user_id": user_id}
 
     resp.raise_for_status()

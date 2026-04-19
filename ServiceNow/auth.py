@@ -55,7 +55,9 @@ def get_token(snow: servicenow) -> str:
     data = resp.json()
 
     if "error" in data:
-        raise RuntimeError(f"ServiceNow OAuth error: {data['error']} — {data.get('error_description', '')}")
+        raise RuntimeError(
+            f"ServiceNow OAuth error: {data['error']} — {data.get('error_description', '')}"
+        )
 
     token = data["access_token"]
     expires_in = data.get("expires_in", 1800)
